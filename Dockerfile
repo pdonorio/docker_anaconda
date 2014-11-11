@@ -9,18 +9,25 @@ MAINTAINER Paolo D Onorio De Meo <p.donorio.demeo@gmail.com>
 # Install packages
 RUN apt-get update
 RUN apt-get install -y expect
-
+#build_essential
 #build_essential + compilatore fortran (gfortran)?
 
-VOLUME /opt
+# A separate space for opt, where i install anaconda
+#VOLUME /opt
+RUN mkdir -p /opt
 
-# download in silent mode
-#ADD http://j.mp/anaconda_linuxpy27 /opt/installer.sh
-ADD installer.sh /opt/
+# download the anaconda installer
+ADD http://j.mp/anaconda_linuxpy27 /opt/installer.sh
+# or force it from this directory?
+#ADD installer.sh /opt/
+
+# Use the interactive script to execute installer automatically
+ADD expect.sh /opt/
+RUN cd /opt && ./expect.sh && rm -f *.sh
 
 WORKDIR /opt
-ADD expect.sh /opt/
 
-# install?
-# DA INSTALLARE
+RUN echo "export PATH=$PATH:/opt/anaconda/bin" >> /root/.bashrc
+
+# MINIMAL DA INSTALLARE
 # numpy, scipy, ipython, notebook, matplotlib, cython, ftopy
