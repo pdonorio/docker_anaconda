@@ -30,5 +30,5 @@ WORKDIR /opt
 # Installer does not seem to save this inside the bash file
 RUN echo "export PATH=$PATH:/opt/anaconda/bin" >> /root/.bashrc
 
-# MINIMAL DA INSTALLARE
-# numpy, scipy, ipython, notebook, matplotlib, cython, ftopy
+# notebook port
+EXPOSE 8888
