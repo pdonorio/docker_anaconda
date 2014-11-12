@@ -17,7 +17,7 @@ RUN apt-get install -y expect
 RUN mkdir -p /opt
 
 # download the anaconda installer
-ADD http://j.mp/anaconda_linuxpy27 /opt/installer.sh
+ADD http://j.mp/anaconda_linuxpy27_64bit /opt/installer.sh
 # or force it from this directory?
 #ADD installer.sh /opt/
 
@@ -27,6 +27,7 @@ RUN cd /opt && ./expect.sh && rm -f *.sh
 
 WORKDIR /opt
 
+# Installer does not seem to save this inside the bash file
 RUN echo "export PATH=$PATH:/opt/anaconda/bin" >> /root/.bashrc
 
 # MINIMAL DA INSTALLARE
