@@ -17,7 +17,7 @@ From your favourite shell do:
 
 ```sh
 # clone this repository
-$ git clone etc.. etc..
+$ git clone https://github.com/pdonorio/docker_anaconda.git
 
 # go for the light version
 $ cd docker_anaconda/light
