@@ -8,6 +8,7 @@
 
 FROM ubuntu:14.04
 MAINTAINER Paolo D Onorio De Meo <p.donorio.demeo@gmail.com>
+
 # Install ubuntu packages (compilers and other tools)
 RUN apt-get update && apt-get install -y expect build-essential gfortran && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -32,3 +33,8 @@ RUN echo "ipython notebook --ip=0.0.0.0 --port=8888 --pylab=inline --no-browser"
 
 # notebook port
 EXPOSE 8888
+
+# Force bash always
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# Activate virtualenv
+RUN echo "source /opt/miniconda/bin/activate scientific" >> /root/.bashrc
