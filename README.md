@@ -3,6 +3,15 @@ docker_anaconda
 
 A python scientific oriented container
 
+**EDIT**: 
+
+A more recent release of this idea inside my work is available now [here](https://github.com/pdonorio/notebookers).
+Also if you are interested in Ipython and Notebooks, you may read a [post i wrote on my blog](http://pile.wf/drops-of-jupyter/) about these topics.
+
+---
+
+**OLD**
+
 Worked out reading:
 http://docs.continuum.io/anaconda/install.html#linux-install
 
